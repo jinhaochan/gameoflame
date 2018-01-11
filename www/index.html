@@ -19,7 +19,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" style="font-family: verdana;" href="#">GAME of LAME</a>
+      <a class="navbar-brand" style="font-family: verdana;" href="/">GAME of LAME</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -28,20 +28,20 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bio<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Contestant 1</a></li>
+            <li><a href="/contestant1">Contestant 1</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Contestant 2</a></li>
+            <li><a href="/contestant2">Contestant 2</a></li>
           </ul>
         </li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Seasons<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Season 1</a></li>
-            <li><a href="#">Season 2</a></li>
-            <li><a href="#">Season 3</a></li>
+            <li><a href="/season1">Season 1</a></li>
+            <li><a href="/season2">Season 2</a></li>
+            <li><a href="/season3">Season 3</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">All Seasons</a></li>
+            <li><a href="/allseasons">All Seasons</a></li>
           </ul>
         </li>
       </ul>
@@ -52,16 +52,20 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">About</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
+{% block content %}
+
 <div id="large-header" class="large-head">
   <canvas id="demo-canvas"></canvas>
     <h1 class="main-title">Season <span class="thin">1</span></h1>
 </div>
+
+{% endblock %}
 
 <link rel=stylesheet type="text/css" href="{% static 'layout.css' %}">
 <script type="text/javascript" src="{% static 'script.js' %}"></script>

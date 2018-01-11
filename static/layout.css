@@ -48,3 +48,9 @@ body {
 		font-size: 3em;
 	}
 }
+
+.about-content {
+    position: relative;
+    top: 20%;
+    text-align: center;
+}

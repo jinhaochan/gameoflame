@@ -19,5 +19,12 @@ from . import views
 
 urlpatterns = [
     path(r'', views.index),
+    path('season1', views.s1),
+    path('season2', views.s2),
+    path('season3', views.s3),
+    path('allseasons', views.alls),
+    path('about', views.about),
+    path('contestant1', views.c1),
+    path('contestant2', views.c2),
     path('admin/', admin.site.urls),
 ]
