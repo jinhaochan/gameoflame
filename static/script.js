@@ -8,7 +8,7 @@
     addListeners();
 
     function initHeader() {
-        width = window.innerWidth * 0. 97;
+        width = window.innerWidth * 0.97;
         height = window.innerHeight * 0.80;
         target = {x: width/2, y: height/2};
 
