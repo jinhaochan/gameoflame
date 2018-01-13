@@ -1,0 +1,33 @@
+{% extends 'index.html'  %}
+
+{% block content %}
+
+{% if logged_in == False %}
+<div class="about-content">
+<p> Please login to suggest a Challenge! </p>
+
+
+<a class="btn btn-social btn-reddit">
+    <span class="fa fa-reddit"></span> Sign in with Reddit
+  </a>
+
+ <a class="btn btn-social btn-facebook">
+    <span class="fa fa-facebook"></span> Sign in with Facebook
+  </a>
+
+ <a class="btn btn-social btn-twitter">
+    <span class="fa fa-twitter"></span> Sign in with Twitter
+  </a>
+
+</div>
+{% else  %}
+
+<div class="about-content">
+<p> Suggest some crazy stuff </p>
+
+</div>
+
+
+{% endif  %}
+
+{% endblock %}

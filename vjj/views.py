@@ -24,3 +24,7 @@ def s3(request):
 def alls(request):
     return render(request, 'allseasons.html')
 
+def suggest(request):
+    if 'logged_in' not in request.session:
+        request.session['logged_in'] = False
+    return render(request,'suggest.html' , {'logged_in':request.session['logged_in']})

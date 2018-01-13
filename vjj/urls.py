@@ -24,6 +24,7 @@ urlpatterns = [
     path('season3', views.s3),
     path('allseasons', views.alls),
     path('about', views.about),
+    path('suggest', views.suggest),
     path('contestant1', views.c1),
     path('contestant2', views.c2),
     path('admin/', admin.site.urls),
