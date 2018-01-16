@@ -29,10 +29,4 @@ urlpatterns = [
     path('contestant1', views.c1),
     path('contestant2', views.c2),
     path('admin/', admin.site.urls),
-    url(r'^oauth/', include('social_django.urls', namespace='social')),  #
 ]
-
-LOGIN_URL = 'suggest'
-LOGOUT_URL = ''
-LOGIN_REDIRECT_URL = 'suggest'
-SOCIAL_AUTH_LOGIN_ERROR_URL = ''
