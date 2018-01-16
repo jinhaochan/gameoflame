@@ -23,7 +23,17 @@
   js = d.createElement(s); js.id = id;
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=151295665528285';
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+
+FB.login(function(response) {
+  if (response.status === 'connected') {
+    alert("welcome!");
+  } else {
+    alert("plz login");
+  }
+});
+
+</script>
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
