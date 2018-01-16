@@ -65,6 +65,6 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     FB.api('/me', function(response) {
-      $.post('/suggestion', {name: response.name});
+      $.post('/suggest', {name: response.name});
     });
   }
