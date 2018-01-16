@@ -29,7 +29,7 @@ def update_session(request):
         return HttpResponseNotAllowed(['POST'])
 
     request.session['logged_in'] = True
-    return render(request,'suggest.html' , {'logged_in':request.session['logged_in']})
+    return HttpResponse('ok')
 
 def suggest(request):
     if 'logged_in' not in request.session:
