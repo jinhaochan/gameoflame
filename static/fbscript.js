@@ -69,8 +69,7 @@
       });
 
     FB.api('/me', function(response) {
-      $.post('/update_session/', function(data) {
-         alert(data);
+      console.log('Successful login for: ' + response.name);
       });
     });
   }
