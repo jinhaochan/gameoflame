@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
 from . import views
 
 urlpatterns = [
@@ -28,4 +29,9 @@ urlpatterns = [
     path('contestant1', views.c1),
     path('contestant2', views.c2),
     path('admin/', admin.site.urls),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),  #
 ]
+
+LOGIN_URL = 'suggest'
+LOGOUT_URL = ''
+LOGIN_REDIRECT_URL = 'suggest'
