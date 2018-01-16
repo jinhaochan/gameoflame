@@ -6,18 +6,7 @@
 <div class="about-content">
 <p> Please login to suggest a Challenge! </p>
 
-
-<a href="{% url 'social:begin' 'github' %}" class="btn btn-social btn-github">
-    <span class="fa fa-github"></span> Sign in with Github
-  </a>
-
- <a class="btn btn-social btn-facebook">
-    <span class="fa fa-facebook"></span> Sign in with Facebook
-  </a>
-
- <a class="btn btn-social btn-twitter">
-    <span class="fa fa-twitter"></span> Sign in with Twitter
-  </a>
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
 
 </div>
 {% else  %}
