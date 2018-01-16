@@ -64,6 +64,9 @@
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
+    $.post('/update_session/', function(data) {
+    alert(data);
+    });
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       });
