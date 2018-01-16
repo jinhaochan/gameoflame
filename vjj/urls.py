@@ -34,4 +34,4 @@ urlpatterns = [
 
 LOGIN_URL = 'suggest'
 LOGOUT_URL = ''
-LOGIN_REDIRECT_URL = 'suggest'
+LOGIN_REDIRECT_URL = 'http://dreamrlog.com/suggest'
