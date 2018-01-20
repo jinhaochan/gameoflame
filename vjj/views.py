@@ -36,6 +36,7 @@ def updateSession(request):
         if 'user' in request.POST:
             request.session['user'] = request.POST['user']
             request.session['logged_in'] = True
+    return HttpResponseRedirect('.')
 
 def suggest(request):
     return render(request, 'suggest.html')
