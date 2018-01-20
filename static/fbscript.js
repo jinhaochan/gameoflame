@@ -8,6 +8,7 @@
     // for FB.getLoginStatus().
     loc = window.location.href;
     if (response.status === 'connected') {
+        updateSession("test");
         if (loc == "http://www.dreamrlog.com/login"){
         location.href = "/"
         }
@@ -24,7 +25,6 @@
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-    updateSession(response.name);
     });
   }
 
@@ -63,15 +63,6 @@
     js.src = "https://connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
-    
-      FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      });
-    };
 
 function updateSession(user){
     var data = {'user': user};
