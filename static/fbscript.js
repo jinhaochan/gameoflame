@@ -6,11 +6,17 @@
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
+    loc = window.location.href;
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       //testAPI();
+       if (loc != "http://www.dreamrlog.com/suggest") {
+          location.href="/suggest";
+      }
+           FB.api('/me', function(response) {
+               console.log('Successful login for: ' + response.name);
+      });
     } else {
-      loc = window.location.href;
       if (loc != "http://www.dreamrlog.com/login") {
           location.href="/login";
       }
