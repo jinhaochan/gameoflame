@@ -68,7 +68,7 @@ function updateSession(user){
 
     var payload = JSON.stringify({
         name : user,
-        csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value
+        csrfmiddlewaretoken: '{{ csrf_token }}'
     });
 
     alert("updating session");
