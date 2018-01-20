@@ -39,7 +39,7 @@ def updateSession(request):
 def suggest(request):
     return render(request, 'suggest.html')
 
-def checkLogin:
+def checkLogin(request):
     if 'logged_in' not in request.session or not request.session['logged_in']:
         request.session['logged_in'] = False
         page = 'login.html'
