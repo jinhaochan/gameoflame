@@ -6,10 +6,12 @@
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
+    loc = window.location.href;
     if (response.status === 'connected') {
+        if (loc == "http://www.dreamrlog.com/login"){
         location.href = "/"
+        }
     } else {
-        loc = window.location.href;
         if (loc != "http://www.dreamrlog.com/login"){
             location.href = "/login"
         }
