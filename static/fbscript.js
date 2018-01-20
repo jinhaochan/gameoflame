@@ -8,7 +8,7 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
         alert("logged in");
-      };
+      
     } else {
         alert("not logged in");
     }
