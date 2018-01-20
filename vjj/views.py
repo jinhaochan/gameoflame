@@ -5,7 +5,7 @@ def index(request):
         name = request.session['user']
     else:
         name = "user"    
-    return render(request, { "name" : name } ,'index.html')
+    return render(request, 'index.html', { "name" : name })
 
 def about(request):
     return render(request, 'about.html')
