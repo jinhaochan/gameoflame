@@ -65,9 +65,7 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     
-$.post('/update_session/', function(data) {
-    alert(data);
-});
+    alert("logged in");
 
 FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
