@@ -24,14 +24,10 @@ def s3(request):
 def alls(request):
     return render(request, 'allseasons.html')
 
-def update_session(request):
-    if not request.is_ajax() or not request.method=='POST':
-        return HttpResponseNotAllowed(['POST'])
-
-    request.session['logged_in'] = True
-    return HttpResponse('ok')
+def login(request):
+    return render(request, 'login.html')
 
 def suggest(request):
     if 'logged_in' not in request.session:
         request.session['logged_in'] = False
-    return render(request,'suggest.html' , {'logged_in':request.session['logged_in']})
+    return render(request,'login.html')
