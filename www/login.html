@@ -1,8 +1,7 @@
 {% extends 'index.html'  %}
-
+{% load static %}
 {% block content %}
 
-{% if logged_in == False %}
 <div class="about-content">
 <script type="text/javascript" src="{% static 'fbscript.js' %}"></script>
 <p> Please login to suggest a Challenge! </p>
@@ -13,12 +12,5 @@
 </div>
 
 </div>
-{% else  %}
 
-<div class="about-content">
-<p> Suggest some crazy stuff </p>
-
-</div>
-
-{% endif  %}
 {% endblock %}
