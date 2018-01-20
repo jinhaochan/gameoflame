@@ -81,7 +81,6 @@
 
 function updateSession(user){
     var data = {'user': user};
-    alert("logged in");
     $.post("/updateSession", data, function(response){
         if(response === 'success'){ alert('Yay!'); }
         else{ alert('Error! :('); }
