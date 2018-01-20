@@ -66,9 +66,11 @@
 
 function updateSession(user){
     alert("updating session");
+    $(document).ready(function() {
     var data = {'user': user};
     $.post("/updateSession", data, function(response){
         if(response === 'success'){ alert('Yay!'); }
         else{ alert('Error! :('); }
     });
+  });
 }
