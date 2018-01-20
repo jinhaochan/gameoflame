@@ -30,4 +30,7 @@ def login(request):
 def suggest(request):
     if 'logged_in' not in request.session:
         request.session['logged_in'] = False
-    return render(request,'login.html')
+        page = 'login.html'
+    else:
+        page = 'suggest.html'
+    return render(request, page)

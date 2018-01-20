@@ -8,11 +8,12 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      testAPI();
+      //testAPI();
     } else {
-      // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+      loc = window.location.href;
+      if (loc != "http://www.dreamrlog.com/login") {
+          location.href="/login";
+      }
     }
   }
 
@@ -65,8 +66,6 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     
-    location.href="/suggest"
-
 FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       });
