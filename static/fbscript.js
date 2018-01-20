@@ -65,6 +65,7 @@
   }(document, 'script', 'facebook-jssdk'));
 
 function updateSession(user){
+    alert("updating session");
     var data = {'user': user};
     $.post("/updateSession", data, function(response){
         if(response === 'success'){ alert('Yay!'); }
