@@ -1,7 +1,10 @@
 from django.shortcuts import render
 
 def index(request):
-    name = request.session['user']    
+    if 'user' in request.session:
+        name = request.session['user']
+    else:
+        name = "user"    
     return render(request, { "name" : name } ,'index.html')
 
 def about(request):
