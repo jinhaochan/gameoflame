@@ -8,8 +8,6 @@
     // for FB.getLoginStatus().
     loc = window.location.href;
     if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      //testAPI();
       FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       updateSession(response.name);
@@ -78,6 +76,7 @@
 
 function updateSession(user){
     var data = {'user': user};
+    alert("logged in");
     $.post("/updateSession", data, function(response){
         if(response === 'success'){ alert('Yay!'); }
         else{ alert('Error! :('); }
