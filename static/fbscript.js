@@ -10,11 +10,10 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       //testAPI();
-       if (loc != "http://www.dreamrlog.com/suggest") {
-          location.href="/suggest";
-      }
-           FB.api('/me', function(response) {
-               console.log('Successful login for: ' + response.name);
+      FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      updateSession(response.name);
+      location.href="/";
       });
     } else {
       if (loc != "http://www.dreamrlog.com/login") {
@@ -76,22 +75,11 @@
       console.log('Successful login for: ' + response.name);
       });
     };
-  
-FB.login(function(response) {
-    loc = window.location.href;
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      //testAPI();
-       if (loc != "http://www.dreamrlog.com/suggest") {
-          location.href="/suggest";
-      }
-           FB.api('/me', function(response) {
-               console.log('Successful login for: ' + response.name);
-      });
-    } else {
-      if (loc != "http://www.dreamrlog.com/login") {
-          location.href="/login";
-      }
-    }
 
-});
+function updateSession(user){
+    var data = {'user': user};
+    $.post("/updateSession", data, function(response){
+        if(response === 'success'){ alert('Yay!'); }
+        else{ alert('Error! :('); }
+    });
+}

@@ -29,5 +29,6 @@ urlpatterns = [
     path('login', views.login),
     path('contestant1', views.c1),
     path('contestant2', views.c2),
+    path('updateSession', views.updateSession),
     path('admin/', admin.site.urls),
 ]

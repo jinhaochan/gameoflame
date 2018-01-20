@@ -27,6 +27,15 @@ def alls(request):
 def login(request):
     return render(request, 'login.html')
 
+def updateSession(request):
+    if request.method == 'POST':
+        if 'user' in request.POST:
+            request.session['user'] = request.POST['user']
+            request.session['logged_in'] = True
+            return HttpResponse('success') # if everything is OK
+    # nothing went well
+    return HttpRepsonse('FAIL!!!!!')
+
 def suggest(request):
     if 'logged_in' not in request.session:
         request.session['logged_in'] = False
