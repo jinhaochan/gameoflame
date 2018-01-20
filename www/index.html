@@ -70,5 +70,27 @@
 <link rel=stylesheet type="text/css" href="{% static 'layout.css' %}">
 <script type="text/javascript" src="{% static 'script.js' %}"></script>
 <script type="text/javascript" src="{% static 'fbscript.js' %}"></script>
+<script>
+function updateSession(user){
+
+    var payload = JSON.stringify({
+        name : user,
+        csrfmiddlewaretoken: '{{ csrf_token }}'
+    });
+
+    alert("updating session");
+    $.ajax({
+    url: "/updateSession",
+    method: "POST",
+    headers: {'X-CSRFToken': '{{ csrf_token }}'},
+    data: payload,
+    dataType: "json"
+  }).done(function(response) {
+    console.log(response.id + " " + response.name);
+  }).fail(function (error) {
+      console.log(error);
+  });
+  };
+</script>
 </body>
 </html>

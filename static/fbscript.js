@@ -63,25 +63,3 @@
     js.src = "https://connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-
-function updateSession(user){
-
-    var payload = JSON.stringify({
-        name : user,
-        csrfmiddlewaretoken: '{{ csrf_token }}'
-    });
-
-    alert("updating session");
-    $.ajax({
-    url: "/updateSession",
-    method: "POST",
-    headers: {'X-CSRFToken': '{{ csrf_token }}'},
-    data: payload,
-    dataType: "json"
-  }).done(function(response) {
-    console.log(response.id + " " + response.name);
-  }).fail(function (error) {
-      console.log(error);
-  });
-  };
-
