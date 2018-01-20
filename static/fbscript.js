@@ -65,12 +65,22 @@
   }(document, 'script', 'facebook-jssdk'));
 
 function updateSession(user){
-    alert("updating session");
-    $(document).ready(function() {
-    var data = {'user': user};
-    $.post("/updateSession", data, function(response){
-        if(response === 'success'){ alert('Yay!'); }
-        else{ alert('Error! :('); }
+
+    var payload = JSON.stringify({
+        name : user
     });
+
+    alert("updating session");
+    $.ajax({
+    url: "/updateSession",
+    method: "POST",
+    headers: {'X-CSRFToken': '{{ csrf_token }}'},
+    data: payload,
+    dataType: "json"
+  }).done(function(response) {
+    console.log(response.id + " " + response.name);
+  }).fail(function (error) {
+      console.log(error);
+  });
   });
 }
