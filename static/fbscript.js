@@ -72,8 +72,26 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     
-FB.api('/me', function(response) {
+      FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       });
     };
   
+FB.login(function(response) {
+    loc = window.location.href;
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      //testAPI();
+       if (loc != "http://www.dreamrlog.com/suggest") {
+          location.href="/suggest";
+      }
+           FB.api('/me', function(response) {
+               console.log('Successful login for: ' + response.name);
+      });
+    } else {
+      if (loc != "http://www.dreamrlog.com/login") {
+          location.href="/login";
+      }
+    }
+
+});
