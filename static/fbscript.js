@@ -80,6 +80,7 @@ FB.login(function(response) {
       console.log('Successful login for: ' + response.name);
       updateSession(response.name);
       location.href="/";
+      });
   } else {
     // The person is not logged into this app or we are unable to tell. 
   }
