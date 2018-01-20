@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
-def index(request):    
-    return render(request, 'index.html')
+def index(request):
+    name = request.session['user']    
+    return render(request, { "name" : name } ,'index.html')
 
 def about(request):
     return render(request, 'about.html')
@@ -32,9 +33,6 @@ def updateSession(request):
         if 'user' in request.POST:
             request.session['user'] = request.POST['user']
             request.session['logged_in'] = True
-            return HttpResponse('success') # if everything is OK
-    # nothing went well
-    return HttpRepsonse('FAIL!!!!!')
 
 def suggest(request):
     return render(request, 'suggest.html')
