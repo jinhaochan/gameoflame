@@ -82,5 +82,5 @@ function updateSession(user){
   }).fail(function (error) {
       console.log(error);
   });
-  });
-}
+  };
+
