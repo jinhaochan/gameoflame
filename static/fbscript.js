@@ -27,6 +27,11 @@
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
+    FB.api('/me', function(response) {
+    console.log('Successful login for: ' + response.name);
+    updateSession(response.name);
+    location.href="/";
+    });
   }
 
   window.fbAsyncInit = function() {
@@ -73,18 +78,6 @@
       console.log('Successful login for: ' + response.name);
       });
     };
-
-FB.login(function(response) {
-  if (response.status === 'connected') {
-      FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      updateSession(response.name);
-      location.href="/";
-      });
-  } else {
-    // The person is not logged into this app or we are unable to tell. 
-  }
-});
 
 function updateSession(user){
     var data = {'user': user};
