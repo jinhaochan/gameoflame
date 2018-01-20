@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
 def index(request):
-    if 'user' in request.session:
-        name = request.session['user']
+    if 'name' in request.session:
+        name = request.session['name']
     else:
         name = "user"    
     return render(request, 'index.html', { "name" : name })
@@ -34,8 +34,8 @@ def login(request):
 
 def updateSession(request):
     if request.method == 'POST':
-        if 'user' in request.POST:
-            request.session['user'] = request.POST['user']
+        if 'name' in request.POST:
+            request.session['name'] = request.POST['name']
             request.session['logged_in'] = True
     return HttpResponseRedirect('.')
 
