@@ -7,10 +7,12 @@
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
-        alert("logged in");
-      
+        location.href = "/"
     } else {
-        alert("not logged in");
+        loc = window.location.href;
+        if (loc != "http://www.dreamrlog.com/login"){
+            location.href = "/login"
+        }
     }
   }
 
