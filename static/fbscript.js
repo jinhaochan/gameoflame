@@ -8,15 +8,10 @@
     // for FB.getLoginStatus().
     loc = window.location.href;
     if (response.status === 'connected') {
-      FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      updateSession(response.name);
-      location.href="/";
+        alert("logged in");
       });
     } else {
-      if (loc != "http://www.dreamrlog.com/login") {
-          location.href="/login";
-      }
+        alert("not logged in");
     }
   }
 
@@ -26,11 +21,7 @@
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-    });
-    FB.api('/me', function(response) {
-    console.log('Successful login for: ' + response.name);
     updateSession(response.name);
-    location.href="/";
     });
   }
 
