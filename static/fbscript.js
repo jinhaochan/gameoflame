@@ -6,7 +6,7 @@
       if (response.status === 'connected') {
         FB.api('/me', function(response) {
           updateSession(response.name,"login");
-      //    location.href = "/"
+          location.href = "/"
         });
       }
     });
