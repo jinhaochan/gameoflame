@@ -1,3 +1,5 @@
+from django.shortcuts import render
+
 def checkLogin(function):
     def wrap(request, *args, **kwargs):
         if 'logged_in' not in request.session or not request.session['logged_in']:
