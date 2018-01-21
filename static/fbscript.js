@@ -65,8 +65,11 @@
   }(document, 'script', 'facebook-jssdk'));
 
 function logout(response){
-  FB.logout(function(response) {
-  // Person is now logged out
+  FB.getLoginStatus(function(response) {
+
+    FB.logout(function(response) {
+    // Person is now logged out
+    });
   });
 }
 
