@@ -3,10 +3,12 @@
   // code below.
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
-      FB.api('/me', function(response) {
-        updateSession(response.name,"login");
-        location.href = "/"
-      });
+      if (response.status === 'connected') {
+        FB.api('/me', function(response) {
+          updateSession(response.name,"login");
+          location.href = "/"
+        });
+      }
     });
   }
 
