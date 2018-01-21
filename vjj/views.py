@@ -44,9 +44,12 @@ def login(request):
 
 def updateSession(request):
     if request.method == 'POST':
-        if 'name' in request.POST:
-            request.session['name'] = request.POST['name']
-            request.session['logged_in'] = True
+        if 'stat' in request.POST:
+            if request.POST['stat'] == 'login':
+                request.session['name'] = request.POST['name']
+                request.session['logged_in'] = True
+            else:
+                request.session['logged_in'] = False
     return render(request, 'index.html')
 
 @checkLogin

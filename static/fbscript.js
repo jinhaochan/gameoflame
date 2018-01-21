@@ -8,9 +8,11 @@
     // for FB.getLoginStatus().
     loc = window.location.href;
     if (response.status === 'connected') {
-        updateSession("test");
+        FB.api('/me', function(response) {
+        updateSession(response.name,"login");
         if (loc == "http://www.dreamrlog.com/login"){
         location.href = "/"
+        });
         }
     } else {
  //       if (loc != "http://www.dreamrlog.com/login"){
@@ -68,16 +70,18 @@ function logout(response){
   FB.getLoginStatus(function(response) {
 
     FB.logout(function(response) {
-    // Person is now logged out
+        updateSession(null,"logout");
     });
   });
 }
 
-function updateSession(user){
+function updateSession(user,action){
   $.ajax({
     url : "updateSession", // the endpoint
     type : "POST", // http method
-    data : { name: user }, // data sent with the post request
+    data : { name: user,
+             stat: action
+           }, // data sent with the post request
 
     // handle a successful response
     success : function(json) {
