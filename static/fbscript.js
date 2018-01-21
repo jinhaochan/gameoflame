@@ -6,7 +6,6 @@
       if (response.status === 'connected') {
         FB.api('/me', function(response) {
           updateSession(response.name,"login");
-          location.href = "/"
         });
       }
     });
@@ -43,12 +42,13 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-function logout(response){
+function logout(){
   FB.getLoginStatus(function(response) {
-
+     if (response.status === 'connected') {
     FB.logout(function(response) {
         updateSession(null,"logout");
     });
+    }
   });
 }
 
@@ -62,6 +62,7 @@ function updateSession(user,action){
 
     // handle a successful response
     success : function(json) {
+          location.href = "/"
     },
 
     // handle a non-successful response
