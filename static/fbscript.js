@@ -12,9 +12,9 @@
         updateSession(response.name,"login");
         if (loc == "http://www.dreamrlog.com/login"){
         location.href = "/"
-        });
-        }
-    } else {
+        }});
+    }
+    else {
  //       if (loc != "http://www.dreamrlog.com/login"){
    //         location.href = "/login"
    //     }
