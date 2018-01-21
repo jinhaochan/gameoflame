@@ -8,39 +8,39 @@ def index(request, *args, **kwargs):
 
 @checkLogin
 def about(request, *args, **kwargs):
-    return render(request, 'about.html')
+    return render(request, 'about.html', kwargs['data'])
 
 @checkLogin
 def c1(request, *args, **kwargs):
-    return render(request, 'contestant1.html')
+    return render(request, 'contestant1.html', kwargs['data'])
 
 @checkLogin
 def c2(request, *args, **kwargs):
-    return render(request, 'contestant2.html')
+    return render(request, 'contestant2.html', kwargs['data'])
 
 @checkLogin
 def s1(request, *args, **kwargs):
-    return render(request, 'season1.html')
+    return render(request, 'season1.html', kwargs['data'])
 
 @checkLogin
 def s2(request, *args, **kwargs):
-    return render(request, 'season2.html')
+    return render(request, 'season2.html', kwargs['data'])
 
 @checkLogin
 def s3(request, *args, **kwargs):
-    return render(request, 'season3.html')
+    return render(request, 'season3.html', kwargs['data'])
 
 @checkLogin
 def alls(request, *args, **kwargs):
-    return render(request, 'allseasons.html')
+    return render(request, 'allseasons.html', kwargs['data'])
 
 @checkLogin
 def login(request, *args, **kwargs):
-    return render(request, 'login.html')
+    return render(request, 'login.html', kwargs['data'])
 
 @checkLogin
 def suggest(request, *args, **kwargs):
-    return render(request, 'suggest.html')
+    return render(request, 'suggest.html', kwargs['data'])
 
 def updateSession(request):
     if request.method == 'POST':
