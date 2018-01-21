@@ -64,6 +64,12 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
+function logout(){
+  FB.logout(function(response) {
+  // Person is now logged out
+  });
+}
+
 function updateSession(user){
   $.ajax({
     url : "updateSession", // the endpoint
