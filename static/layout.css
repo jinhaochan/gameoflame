@@ -55,3 +55,8 @@ body {
     top: 20%;
     text-align: center;
 }
+
+.policy {
+height: 150px;
+max-height:150px;
+}
