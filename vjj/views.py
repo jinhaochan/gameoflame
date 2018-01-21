@@ -6,9 +6,10 @@ from .dec import checkLogin
 def index(request):
     if 'name' in request.session:
         name = request.session['name']
+        logged_in = request.session['logged_in']
     else:
         name = "user"    
-    return render(request, 'index.html', { "name" : name })
+    return render(request, 'index.html', { "name" : name, 'logged_in': logged_in })
 
 @checkLogin
 def about(request):
