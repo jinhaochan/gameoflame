@@ -4,12 +4,7 @@ from .dec import checkLogin
 
 @checkLogin
 def index(request):
-    if 'name' in request.session:
-        name = request.session['name']
-        logged_in = request.session['logged_in']
-    else:
-        name = "user"    
-    return render(request, 'index.html', { "name" : name, 'logged_in': logged_in })
+    return render(request, 'index.html', data)
 
 @checkLogin
 def about(request):

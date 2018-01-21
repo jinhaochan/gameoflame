@@ -6,6 +6,13 @@ def checkLogin(function):
             request.session['logged_in'] = False  
             return render(request, "login.html")
         else:
+            name = request.session['name']
+            logged_in = request.session['logged_in']
+
+            data = { 'name' : name,
+                     'logged_in': logged_in
+                   }
+
             return function(request, *args, **kwargs)
     wrap.__doc__ = function.__doc__
     wrap.__name__ = function.__name__
