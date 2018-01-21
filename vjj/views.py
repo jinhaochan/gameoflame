@@ -6,8 +6,8 @@ from .dec import checkLogin
 def index(request, *args, **kwargs):
     return render(request, 'index.html', kwargs['data'])
 
-def about(request, *args, **kwargs):
-    return render(request, 'about.html', kwargs['data'])
+def about(request):
+    return render(request, 'about.html')
 
 @checkLogin
 def c1(request, *args, **kwargs):
