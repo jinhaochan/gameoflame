@@ -13,8 +13,9 @@
         target = {x: width/2, y: height/2};
 
         largeHeader = document.getElementById('large-header');
+        if (largeHeader != null){
         largeHeader.style.height = height+'px';
-
+        }
         canvas = document.getElementById('demo-canvas');
         canvas.width = width;
         canvas.height = height;
