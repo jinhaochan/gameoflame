@@ -6,7 +6,6 @@ from .dec import checkLogin
 def index(request, *args, **kwargs):
     return render(request, 'index.html', kwargs['data'])
 
-@checkLogin
 def about(request, *args, **kwargs):
     return render(request, 'about.html', kwargs['data'])
 
