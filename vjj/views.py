@@ -50,6 +50,7 @@ def updateSession(request):
                 request.session['logged_in'] = True
             elif request.POST['stat'] == 'logout':
                 request.session['logged_in'] = False
+    return render(request, 'index.html')
 
 @checkLogin
 def suggest(request):
