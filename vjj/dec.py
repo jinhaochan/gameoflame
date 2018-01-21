@@ -12,6 +12,8 @@ def checkLogin(function):
             data = { 'name' : name,
                      'logged_in': logged_in
                    }
+  
+            kwargs['data'] = data
 
             return function(request, *args, **kwargs)
     wrap.__doc__ = function.__doc__

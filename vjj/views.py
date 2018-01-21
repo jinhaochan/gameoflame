@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from .dec import checkLogin
 
 @checkLogin
-def index(request):
-    return render(request, 'index.html', data)
+def index(request, *args, **kwargs):
+    return render(request, 'index.html', kwargs['data'])
 
 @checkLogin
 def about(request):
