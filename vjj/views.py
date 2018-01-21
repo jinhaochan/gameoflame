@@ -48,7 +48,7 @@ def updateSession(request):
             if request.POST['stat'] == 'login':
                 request.session['name'] = request.POST['name']
                 request.session['logged_in'] = True
-            else:
+            elif request.POST['stat'] == 'logout':
                 request.session['logged_in'] = False
     return HttpResponse(status=200)
 

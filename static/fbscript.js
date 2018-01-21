@@ -1,31 +1,13 @@
-// This is called with the results from from FB.getLoginStatus().
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    loc = window.location.href;
-    if (response.status === 'connected') {
-    }
-    else {
- //       if (loc != "http://www.dreamrlog.com/login"){
-   //     }
-    }
-  }
-
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-    FB.api('/me', function(response) {
+      FB.api('/me', function(response) {
         updateSession(response.name,"login");
         location.href = "/"
-    })
+      });
+    });
   }
 
   window.fbAsyncInit = function() {
@@ -48,11 +30,6 @@
     //    your app or not.
     //
     // These three cases are handled in the callback function.
-
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-
   };
 
   // Load the SDK asynchronously
