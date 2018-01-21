@@ -64,7 +64,7 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-function logout(){
+function logout(response){
   FB.logout(function(response) {
   // Person is now logged out
   });
