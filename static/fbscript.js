@@ -9,13 +9,13 @@
     loc = window.location.href;
     if (response.status === 'connected') {
         updateSession("test");
-        if (loc == "http://www.dreamrlog.com/login"){
-        location.href = "/"
-        }
+//        if (loc == "http://www.dreamrlog.com/login"){
+  //      location.href = "/"
+    //    }
     } else {
-        if (loc != "http://www.dreamrlog.com/login"){
-            location.href = "/login"
-        }
+ //       if (loc != "http://www.dreamrlog.com/login"){
+   //         location.href = "/login"
+   //     }
     }
   }
 
