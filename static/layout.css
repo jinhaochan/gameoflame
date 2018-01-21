@@ -62,7 +62,7 @@ body {
     width: 800px;
     height: 200px;
     overflow: scroll;
-    text-align: center;
+    display: inline-block;
 }
 
 ::-webkit-scrollbar-track {
