@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-import decorators.checkLogin
+from decorators import checkLogin
 
 @checkLogin
 def index(request):
