@@ -11,7 +11,6 @@
     }
     else {
  //       if (loc != "http://www.dreamrlog.com/login"){
-   //         location.href = "/login"
    //     }
     }
   }
@@ -25,6 +24,7 @@
     });
     FB.api('/me', function(response) {
         updateSession(response.name,"login");
+        location.href = "/"
     })
   }
 
