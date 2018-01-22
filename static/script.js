@@ -17,10 +17,11 @@
         largeHeader.style.height = height+'px';
         }
         canvas = document.getElementById('demo-canvas');
+        if (canvas != null){
         canvas.width = width;
         canvas.height = height;
         ctx = canvas.getContext('2d');
-
+        }
         // create points
         points = [];
         for(var x = 0; x < width; x = x + width/20) {
