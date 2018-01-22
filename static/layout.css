@@ -59,6 +59,7 @@ body {
 .policy {
     border: none;
     padding: 5px;
+    width: 800px;
     height: 200px;
     overflow: scroll;
     display: inline-block;
