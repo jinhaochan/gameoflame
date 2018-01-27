@@ -54,7 +54,7 @@
       <li><a href="/suggest"> Suggest a Challenge! </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        {% if logged_in %} 
+        {% if request.session.logged_in %} 
         <li><a href="#" onclick="logout()">Logout</a></li>
         {% endif %}
         <li><a href="/about"> About</a></li>
