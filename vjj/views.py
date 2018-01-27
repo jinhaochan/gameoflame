@@ -33,7 +33,7 @@ def login(request, *args, **kwargs):
 
 @checkLogin
 def suggest(request, *args, **kwargs):
-    kwargs['data']['forms'] = forms
+    kwargs['data']['form'] = forms
     return render(request, 'suggest.html', kwargs['data'])
 
 def updateSession(request):
