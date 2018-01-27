@@ -3,29 +3,29 @@ from django.http import HttpResponse
 from vjj.dec import checkLogin
 from vjj.forms import forms
 
-def index(request, *args, **kwargs):
-    return render(request, 'index.html', kwargs['data'])
+def index(request):
+    return render(request, 'index.html')
 
 def about(request):
     return render(request, 'about.html')
 
-def c1(request, *args, **kwargs):
-    return render(request, 'contestant1.html', kwargs['data'])
+def c1(request):
+    return render(request, 'contestant1.html')
 
-def c2(request, *args, **kwargs):
-    return render(request, 'contestant2.html', kwargs['data'])
+def c2(request):
+    return render(request, 'contestant2.html')
 
-def s1(request, *args, **kwargs):
-    return render(request, 'season1.html', kwargs['data'])
+def s1(request):
+    return render(request, 'season1.html')
 
-def s2(request, *args, **kwargs):
-    return render(request, 'season2.html', kwargs['data'])
+def s2(request):
+    return render(request, 'season2.html')
 
-def s3(request, *args, **kwargs):
-    return render(request, 'season3.html', kwargs['data'])
+def s3(request):
+    return render(request, 'season3.html')
 
-def alls(request, *args, **kwargs):
-    return render(request, 'allseasons.html', kwargs['data'])
+def alls(request):
+    return render(request, 'allseasons.html')
 
 @checkLogin
 def login(request, *args, **kwargs):
