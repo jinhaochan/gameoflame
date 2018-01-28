@@ -35,7 +35,7 @@ def login(request, *args, **kwargs):
 def suggest(request, *args, **kwargs):
     data = {
             'form' : forms,
-            'name': kwargs['data'].name
+            'name': kwargs['data']['name']
            }     
 
     return render(request, 'suggest.html', data)
