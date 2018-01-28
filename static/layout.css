@@ -22,8 +22,12 @@ body {
 
 }
 
-.thumbnail{
+.thumbnail.outer{
      background: linear-gradient(135deg, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+}
+
+.thumbnail.inner{
+     background: linear-gradient(45deg, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%);
 }
 
 .main-title {
