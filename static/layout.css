@@ -23,12 +23,10 @@ body {
 }
 
 .row {
-        position: absolute;
+        position: relative;
         text-align: center;
         top: 20%;
         left: 50%;
-        -webkit-transform: translate3d(-50%,-50%,0);
-        transform: translate3d(-50%,-50%,0);
 }
 
 
