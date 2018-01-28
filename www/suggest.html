@@ -7,13 +7,10 @@
 
 <div class="container">
 
-<form action="/index" method="post" class="form">
+<form action="/" method="post" class="form">
   {% csrf_token %}
   {% bootstrap_form form show_label=False%}
    {% buttons submit='Send!' %}
-    <button type="submit" class="btn btn-primary">
-      {% bootstrap_icon "star" %} Submit
-    </button>
   {% endbuttons %}
 </form>
 
