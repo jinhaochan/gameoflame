@@ -70,8 +70,10 @@
     <h1 class="main-title">Season <span class="thin">1</span></h1>
 
   {% for suggestion in suggestions %}
-    <li>{{ suggestion.name }}</li>
-    <li>{{ suggestion.suggestion }}</li>
+    <dl>
+        <dt>{{ suggestion.name }}</dt>
+        <dd>{{ suggestion.suggestion}}</dd>
+    </dl>
   {% endfor %}
 
 </div>
