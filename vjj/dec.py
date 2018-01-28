@@ -7,10 +7,8 @@ def checkLogin(function):
             return render(request, "login.html")
         else:
             name = request.session['name']
-            logged_in = request.session['logged_in']
 
             data = { 'name' : name,
-                     'logged_in': logged_in
                    }
   
             kwargs['data'] = data

@@ -33,9 +33,14 @@ def login(request, *args, **kwargs):
 
 @checkLogin
 def suggest(request, *args, **kwargs):
-    form_dict = {'form':forms}
     kwargs['data'].update(form_dict)
-    return render(request, 'suggest.html', kwargs['data'])
+
+    data = {
+            'form' : forms,
+            'name': kwargs['data'].name
+           }     
+
+    return render(request, 'suggest.html', data)
 
 def updateSession(request):
     if request.method == 'POST':
