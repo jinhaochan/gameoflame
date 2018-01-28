@@ -28,19 +28,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['.dreamrlog.com','.herokuapp.com']
 
-#DATABASES = { 'default': dj_database_url.config() }
+DATABASES = { 'default': dj_database_url.config() }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'apassword',
-        'HOST': 'localhost',
-        'PORT': '',
-    },
-
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'postgres',
+#        'USER': 'postgres',
+#        'PASSWORD': 'apassword',
+#        'HOST': 'localhost',
+#        'PORT': '',
+#    },
+#}
 
 # Application definition
 
