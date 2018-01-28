@@ -11,9 +11,10 @@ def index(request):
              name_data = request.session['name']
              suggest_model = Suggestion.objects.create(
                              name=name_data, suggestion = suggestion_data)
-             return render(request, 'suggest.html')
+    
+    suggest_model = Suggestion.objects.all()
 
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'suggestions':suggest_model})
 
 def about(request):
     return render(request, 'about.html')

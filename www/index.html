@@ -68,6 +68,12 @@
 <div id="large-header" >
   <canvas id="demo-canvas"></canvas>
     <h1 class="main-title">Season <span class="thin">1</span></h1>
+
+  {% for suggestion in suggestions %}
+    <li>{{ suggestion.name }}</li>
+    <li>{{ suggestion.suggestion }}</li>
+  {% endfor %}
+
 </div>
 
 {% endblock %}
