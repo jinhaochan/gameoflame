@@ -22,14 +22,6 @@ body {
 
 }
 
-.row {
-        position: relative;
-        text-align: center;
-        top: 20%;
-        left: 50%;
-}
-
-
 .main-title {
 	position: absolute;
 	margin: 0;
