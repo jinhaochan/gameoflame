@@ -2,8 +2,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from vjj.dec import checkLogin
 from vjj.forms import suggestion
+from vjj.models import Suggestion
 
 def index(request):
+    if request.method == 'POST':
+         if 'suggestion' in request.POST:
+             suggestion_data = request.POST['suggestion']
+             name_data = request.POST['name']
+             suggest_model = Suggestion.object.create(
+                             name=name_data, suggestion = suggestion_data)
+
     return render(request, 'index.html')
 
 def about(request):
