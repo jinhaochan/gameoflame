@@ -9,7 +9,7 @@ def index(request):
          if 'suggestion' in request.POST:
              suggestion_data = request.POST['suggestion']
              name_data = request.session['name']
-             suggest_model = Suggestion.object.create(
+             suggest_model = Suggestion.objects.create(
                              name=name_data, suggestion = suggestion_data)
              return render(request, 'suggest.html')
 
