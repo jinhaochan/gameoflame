@@ -22,6 +22,12 @@ body {
 
 }
 
+.thumbnail{
+     border:none !important;
+     background: transparent !important;
+     box-shadow:none !important;
+}
+
 .main-title {
 	position: absolute;
 	margin: 0;
