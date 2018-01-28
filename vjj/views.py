@@ -33,8 +33,6 @@ def login(request, *args, **kwargs):
 
 @checkLogin
 def suggest(request, *args, **kwargs):
-    kwargs['data'].update(form_dict)
-
     data = {
             'form' : forms,
             'name': kwargs['data'].name
