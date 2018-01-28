@@ -34,7 +34,7 @@ def login(request, *args, **kwargs):
 @checkLogin
 def suggest(request, *args, **kwargs):
     form_dict = {'form':forms}
-    kwargs['data'].append(form_dict)
+    kwargs['data'].update(form_dict)
     return render(request, 'suggest.html', kwargs['data'])
 
 def updateSession(request):
