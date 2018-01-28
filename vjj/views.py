@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from vjj.dec import checkLogin
-from vjj.forms import forms
+from vjj.forms import suggestion
 
 def index(request):
     return render(request, 'index.html')
@@ -34,7 +34,7 @@ def login(request, *args, **kwargs):
 @checkLogin
 def suggest(request, *args, **kwargs):
     data = {
-            'form' : forms,
+            'form' : suggestion,
             'name': kwargs['data']['name']
            }     
 
