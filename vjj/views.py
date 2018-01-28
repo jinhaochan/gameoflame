@@ -11,6 +11,7 @@ def index(request):
              name_data = request.POST['name']
              suggest_model = Suggestion.object.create(
                              name=name_data, suggestion = suggestion_data)
+             return render(request, 'suggest.html')
 
     return render(request, 'index.html')
 
