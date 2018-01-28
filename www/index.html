@@ -73,6 +73,7 @@
 <div class="row">
   {% for suggestion in suggestions %}
     <div class="col-sm-3">
+      <div class="thumbnail">
         <div class="caption">
           <h3>{{suggestion.name}}</h3>
         </div>
@@ -80,6 +81,7 @@
             {{suggestion.suggestion}}
         </div>
     </div>
+   </div>
   {% endfor %}
 </div>
 
